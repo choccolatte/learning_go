@@ -53,13 +53,53 @@
 // 	fmt.Printf(displayMessage, averageOpenRate)
 // }
 
+// package main
+
+// import "fmt"
+
+// func main() {
+// 	accountAge := 2.6
+// 	accountAgeInt := int(accountAge)
+
+// 	fmt.Println("Your acount has existed for", accountAgeInt, "years")
+// }
+
+
 package main
-
-import "fmt"
-
-func main() {
-	accountAge := 2.6
-	accountAgeInt := int(accountAge)
-
-	fmt.Println("Your acount has existed for", accountAgeInt, "years")
-}
+			
+	import "fmt"
+	
+	func (e email) cost() float64{
+		if !e.isSubscribed{
+			0.05 * float64(len(e.body))	
+		}
+		return 0.01 * float64(len(e.body))
+	}
+	
+	func (e email) print(){
+		fmt.Println(e.body)
+	}
+	
+	type expense interface{
+		cost() float64
+	}
+	
+	type printer interface{
+		print()
+	}
+	
+	type email struct{
+		isSubscribed bool
+		body string
+	}
+	
+	func print(p printer){
+		p.print()
+	}
+	
+	func test(e expense, p printer){
+		fmt.Printf('Printing with cost: $%.2f ...\n', e.cost())
+		p.print()
+		fmt.Println('======================================')
+		)
+	}
